@@ -27,21 +27,57 @@
 \makeatother
 
 \begin{document}
-\title{話しことばのグループチェック授業モデルの提案と\\支援システムの開発\\Development and Practice of Group Check Model \\for Report Writing Focused on\\Japanese Academic Report Writing}
-\author{指導教員：山川 広人\\
-公立 千歳科学技術大学 理工学部\\
-情報システム学科　小松川・山川研究室\\
-令和2年度\\
-B2170560 川越 颯亮}
+    \title{プログラムコードの複雑さの防止効果が高い\\システム開発上の要素の検討\\Consideration of view points\\that contribute to the prevention of\\program code complexity in system development.}
+    \author{指導教員：山川 広人\\
+    公立 千歳科学技術大学 理工学部\\
+    情報システム学科　山川研究室\\
+B2201400 須藤　真由}
 \date{\today}
 
 \maketitle
 \pagenumbering{roman}
 \tableofcontents
-
 \chapter{序論}
 \pagenumbering{arabic}
 
-\section{本研究の背景}
+\section{背景}
+プログラムコードにおける認知負荷に注目が集まっている。平嶋ら\cite{haikei}は高等教育機関におけるプログラミング講義に苦手意識を持つ学習者に着目し、プログラミング学習者の認知負荷を減少させ、アルゴリズムの組み立て等の適切な部分に認知資源を集中させるべきだと述べている。社会的にもプログラムコードの認知負荷に対する取り組みや議論は盛んである。オープンワーク株式会社ではエンジニアによるブログで認知負荷を低減するために実践している事例を公開している。株式会社カケハシとリクルートホールディングスが合同で開催したイベントでの講演では、実際に直面した開発中の課題の1つとして認知負荷の増大を挙げていた。認知負荷が高い状態は学習やシステム開発をする上で問題となり、解決すべき課題であると捉えられている。\\　認知負荷に対する研究は高等教育機関におけるPBL学習(Ploject Based Learning)に対しても有用である。PBL学習には企業や地域のステークホルダーと連携し、数世代に亘ってプロジェクトを引継ぐことで成果物の発展や価値提供を行い続けるものがある。しかし、複雑さを招かずにシステム開発をする知識や認知負荷を下げるという意識を学生が必ずしも持ち合わせてはいないので、成果物として複雑なプログラムコードが出来上がることがある。その成果物を次の世代のプロジェクトが引き継ぐ際に、複雑なプログラムコードを読み解くことに時間がかかり問題解決に認知資源を集中できないことや、新たにプログラムコードを追加、変更した際に、さらに複雑なものにしてしまうことがある。PBL学習を効果的に行うためにも、複雑さの原因や複雑さを防止する方法について明らかにする必要がある。
 
+\section{目的}
+\section{構成}
+\chapter{先行研究と本研究の位置づけ}
+\section{先行研究}
+\subsection{}
+\subsection{}
+\section{本研究の位置づけ}
+\chapter{複雑さの原因の分析と改善案の提案}
+\section{複雑さの原因の分析}
+\section{複雑さの防止方法の提案}
+\chapter{リファクタリングによるコードの改善}
+\section{改善方法}
+\subsection{単一責任の原則}
+\subsection{モデリング}
+\subsection{テストコードの作成}
+\section{改善結果}
+\chapter{検証方法の検討}
+\section{検証方法}
+\subsection{責務を分けたコード}
+\subsection{共有されたメンタルモデルを反映させたコード}
+\subsection{観察可能な振る舞いを確認できるコード}
+\section{検証結果と考察}
+\subsection{責務を分けたコード}
+\subsection{共有されたメンタルモデルを反映させたコード}
+\subsection{観察可能な振る舞いを確認できるコード}
+\chapter{結論}
+\section{まとめ}
+\section{今後の課題}
+
+\renewcommand{\bibname}{参考文献}
+\addcontentsline{toc}{chapter}{参考文献}
+\begin{thebibliography}{10}
+\bibitem{haikei}「認知負荷を減らしたプログラミング学習支援に関する研究」石井 元規, 松本 慎平, 林 雄介, 平嶋 宗, 教育システム情報学会 2016年度学生研究発表会, 175-176
+\end{thebibliography}
+
+\chapter*{謝辞}
+\addcontentsline{toc}{chapter}{謝辞}
 \end{document}
