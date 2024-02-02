@@ -7,15 +7,6 @@
 \usepackage{times, mathptmx}
 \usepackage{longtable}
 \usepackage{colortbl}
-\documentclass[11pt, a4paper]{jreport}
-
-\usepackage[driver=dvipdfm]{geometry}
-\usepackage[dvipdfmx]{graphicx, color}
-\usepackage{here}
-\usepackage{plext}
-\usepackage{times, mathptmx}
-\usepackage{longtable}
-\usepackage{colortbl}
 \usepackage{tabularx}
 \usepackage{enumerate}
 \usepackage{comment}
@@ -75,9 +66,22 @@ B2201400 須藤　真由}
 \item 開発者の独自の解釈を反映させたコード
 \item どのような操作でどのような結果を示すのか分からないコード
 \end{enumerate}
-1について、
+　1について、以下に示した図3.1のプログラムコードのように1つのメソッドに多くの役割が含まれていること、話しことばの検出にまつわるメソッドがまとめて1つのクラスに書かれており、検出についての詳細な処理がどこに書かれているか探しにくい状態になっていた
+\begin{figure}
+\centering \includegraphics[width=1\linewidth]{image/genin1.png}
+\caption{どのような役割がどこに書かれているのか分からないコードの例}
+\label{fig:enter-label}
+\end{figure}
+\\　2について、話しことばの検出の過程には形態素解析を行った後に形態素の前後関係を用いるものがあり、それらをカテゴリーで分類し判断している。その中で、下に示す図3.2のプログラムコードのようにいくつか前の形態素を用いるものをC2、1つ、2つ、3つをドイツ語でEins、Zwei、Dreiとプログラムコード上で示している。こういった命名や他にも処理の内容や順番に開発者独自の考えが反映されていた。
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{image/geini2.png}
+\caption{開発者の独自の解釈を反映させたコードの例}
+\label{fig:enter-label}
+\end{figure}
+\\　3について、このシステムがどのような操作でどのような結果を示すものなのか、どのような実装がされていればステークホルダーの要求を満たしているのか、確かめる手段が用意されていなかった。
 \section{複雑さの防止方法の提案}
-話しことばチェッカーのプログラムコードをドメイン駆動設計やテスト駆動開発の技を用いて改善
+プログラムコードの複雑さの原因に基づき、ドメイン駆動設計やテスト駆動開発を用いてリファクタリングを行いプログラムコードの改善を行った。ドメイン駆動設計はドメインモデルに基づき、
 \chapter{リファクタリングによるコードの改善}
 \section{改善方法}
 \subsection{モデリング}
@@ -105,9 +109,8 @@ B2201400 須藤　真由}
 \subsection{観察可能な振る舞いを確認できるコード}
 \chapter{結論}
 \section{まとめ}
-複雑さの防止効果が高いシステム開発上の要素が判明した。また、その要素がプログラムコードに反映されているか評価する方法について、責務を分けたコードに関しては凝集度による評価、共有されたメンタルモデルを反映させたコードと観察可能な振る舞いを確認できるコードについてはプログラムコードをドキュメント化したものを用いてのインタビューにより評価できることが明らかになった。これにより、責務が分けられたコードであるか誰もが確認できる方法、誰もがメンタルモデルや観察可能な振る舞いを共有できる方法が実現できる可能性が見えたといえる。
+複雑さの防止効果が高いシステム開発上の要素が判明した。また、その要素がプログラムコードに反映されているか評価する方法について、責務を分けたコードに関しては凝集度による評価、共有されたメンタルモデルを反映させたコードと観察可能な振る舞いを確認できるコードについてはプログラムコードをドキュメント化したものを用いてのインタビューにより評価できることが明らかになった。これにより、責務が分けられたコードであるか誰もが確認できる方法、メンタルモデルや観察可能な振る舞いを誰もが共有できる方法を実現できる可能性が見えたといえる。
 \section{今後の課題}
-
 \renewcommand{\bibname}{参考文献}
 \addcontentsline{toc}{chapter}{参考文献}
 \begin{thebibliography}{10}
