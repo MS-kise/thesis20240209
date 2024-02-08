@@ -13,6 +13,9 @@
 \usepackage{url}
 \usepackage{lscape}
 \usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{bm}
 %\usepackage{otf}
 
 \setlength{\voffset}{0.5truecm}
@@ -184,30 +187,58 @@
 責務を分けたコードとなっているか、凝集度を用いた定量評価を行う。凝集度とはクラス内のデータとロジックの関係性の強さを表す指標であり、クラス内に責務がどの程度集中しているか示すことができるものである。
 \\　凝集度を計測できるツールとしてYegor Bugayenkoが公開しているjPeekの5つの指標で計測する。5つの指標は以下の通りである。
 \\
-\begin{equation}
-CAMC:
+\begin{gather}
+\text{CAMC : }
 \frac{a}{kl}
-\end{equation}
-$a$ :メソッド内の型の数, $k$ :メソッドの数, $l$ :型の数
+\end{gather}
+\begin{gather*}
+a\text{　メソッド内の型の数}
+\\k\text{　メソッドの数}
+\\l\text{　型の数}
+\end{gather*}
+\\
 \begin{equation}
 LCOM5:
 \frac{a-kl}{l-kl}
 \end{equation}
-$a$ :メソッド内のattributesの数, $k$ :メソッドの数, $l$ : attributesの数
+\begin{gather*}
+a\text{　メソッド内のattributesの数}
+\\k\text{　メソッドの数}
+l\\l\text{　attributesの数}
+\end{gather*}
+\\
 \begin{equation}
 MMAC:
 \frac{\sum^{i=l}_{i=1}{{x}_{i}{({x}_{i}-1})}}{lk(k-1)}
 \end{equation}
-$l$ : 型の数, $k$ : メソッドの数, ${x}_{i}$ : 戻り値が${i}$のメソッドの数
+\begin{gather*}
+l\text{　型の数}
+\\k\text{　メソッドの数}
+\\{x}_{i}\text{　戻り値が}i\text{のメソッドの数}
+\end{gather*}
+\\
 \begin{equation}
 NHD:
 1-\frac{2}{lk(k-1)}\sum^{l}_{j=1}{x}_{i}{(k-{x}_{i})}
 \end{equation}
-
+\begin{gather*}
+l\text{　型の数}
+\\k\text{　メソッドの数}
+\\{x}_{i}\text{　}i\text{の型を含むメソッドの数}
+\end{gather*}
+\\
 \begin{equation}
 SCOM:
 \frac{2}{m(m-1)}\sum^{m-1}_{i=1}\sum^{m}_{j=i+1}\frac{|{I}_{i}\cap{I}_{j}|}{min(|{I}_{i}|,|{I}_{j}|)}*\frac{|{I}_{i}\cup{I}_{j}|}{l}
 \end{equation}
+\begin{gather*}
+m\text{　メソッドの数}
+\\|{I}_{i}|\text{　}i\text{のattributesの濃度}
+\\|{I}_{j}|\text{　}i\text{のattributesの濃度}
+\\|{I}_{i}\cap{I}_{j}|\text{　}(i\text{のattributes}\cap j\text{のattributes)の濃度}
+\\|{I}_{i}\cup{I}_{j}|\text{　}(i\text{のattributes}\cup j\text{のattributes)の濃度}
+\\l\text{　attributesの数}
+\end{gather*}
 \\　これらの指標はスコアが高いほど凝集度が低く、責務が分けられていると一般的に言われている。これを用いてリファクタリング前後の凝集度を算出し、結果の比較を行う。
 \subsection{共有されたメンタルモデルを反映させたコード}
 リファクタリング前後のプログラムコードを文書化し、それを用いてドメインエキスパートにインタビューを行うことで、共有されたメンタルモデルが反映されたコードとなっているか定性評価を行う。
